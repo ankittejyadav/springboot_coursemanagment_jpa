@@ -1,6 +1,7 @@
 package com.example.courseapidata.dataapi.topic;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,7 @@ public class TopicController {
     }
 
     @RequestMapping("/topicname/{name}")
-    public Topic getTopicName(@PathVariable String name){
+    public Optional<Topic> getTopicName(@PathVariable String name){
         return topicService.getTopicName(name);
     }
     
