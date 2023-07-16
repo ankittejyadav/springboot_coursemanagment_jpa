@@ -2,14 +2,16 @@ package com.example.courseapidata.dataapi.course;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
 
-    public List<Course> getAllCourses(){
-        return (List<Course>) courseRepository.findAll();
+    public List<Course> getAllCourses(String topicId){
+        return (List<Course>) courseRepository.findByTopicId(topicId);
     }
 
     public Course getCourse(String id){
@@ -20,7 +22,7 @@ public class CourseService {
         courseRepository.save(course);
     }
 
-    public void updateCourse(String id, Course course){
+    public void updateCourse(Course course){
         courseRepository.save(course); 
     }
 
