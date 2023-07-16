@@ -1,5 +1,7 @@
 package com.example.courseapidata.dataapi.course;
 
-public class CourseRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface CourseRepository extends CrudRepository<Course,String>{
     
 }
